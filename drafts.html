@@ -1,0 +1,17 @@
+code text color #11a611;
+secondary code color #666;
+code font     font-family: Consolas, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+Some blue color- #2b5b847
+-Dynamic Updates: If possible, consider adding dynamic updates to the cost as users change the inputs, rather than requiring them to click a button to see the updated cost.
+-Floating right section for mobile devices
+-Cost excluding glass; Use different config.js to factor in glass margin.
+-ARIA Labels: Ensure that all interactive elements (buttons, inputs, etc.) have appropriate ARIA labels for screen readers.
+
+
+
+
+// Update copyright year dynamically
+document.addEventListener("DOMContentLoaded", function() {
+    const year = new Date().getFullYear();
+    document.querySelector(".copyright").textContent = `© ${year} Cosmo Junkie. All rights reserved.`;
+});

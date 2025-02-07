@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Builders</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+  <title>Aluminium Windows Quote</title>
+  <meta name="description" content="User friendly tool to calculate your aluminium windows costs">
+</head>
+
+<body>
+
+    <div id="touchnav-wrapper">
+
+
+
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-navigation">
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#get-quote">Get Quote</a></li>
+                    <li><a href="#our-services">Our Services</a></li>
+                    <li><a href="#our-projects">Projects</a></li>
+                    <li><a href="#knowledge-area">Technicals</a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<section class="hero">
+    <div class="container">
+        <!-- Top row: Logo and Box -->
+        <div class="hero-top-row">
+            <!-- Logo on the left -->
+            <div class="site-headline">
+                <a href="/"><img class="site-logo" src="img/Capital builders logo.png" alt="Capital Builders Logo"></a>
+            </div>
+
+            <!-- Box on the right -->
+            <div class="hero-right-box">
+                <a href="/page1" class="menu-link">Page 1</a>
+                <a href="/page2" class="menu-link">Page 2</a>
+                <a href="/page3" class="menu-link">Page 3</a>
+            </div>
+        </div>
+
+<!-- Hero content below -->
+<div class="hero-content">
+    <div class="content-box">
+        
+<!-- Left Section -->
+<div class="left-section">
+    <div class="measurements-field">
+        <h4>>> Enter your window's measurements</h4>
+        <ul>
+            <li>
+                <label>Width (mm):*</label>
+                <input type="text" id="widthId">
+            </li>
+            <li>
+                <label>Height (mm):*</label>
+                <input type="text" id="heightId">
+            </li>
+        </ul>
+    </div>
+    <div class="properties-field">
+        <h4>>>> Configure properties</h4>
+        <ul>
+            <li class="profileColour">
+                <label>Select Profile colour:</label>
+                <select id="profileColour">
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                    <option value="silver">Silver</option>
+                    <option value="brown">Brown</option>
+                    <option value="champagne">Champagne</option>
+                    <option value="grey">Grey</option>
+                </select>
+            </li>
+            <li class="noOfPanels">
+                <label>Select Number of panels:</label>
+                <select id="noOfPanels" onchange="typeGallery()">
+                    <option value="2">2 panels</option>
+                    <option value="3">3 panels</option>
+                    <option value="4">4 panels</option>
+                </select>
+            </li>
+            <li class="fixedPartition">
+                <label>With/Without Fixed partition:</label>
+                <select id="fixedPartition" onchange="typeGallery()">
+                    <option value="noPartition">No Fixed Partition</option>
+                    <option value="doubleFixed">Top & Bottom</option>
+                    <option value="fixedTop">Fixed Top</option>
+                    <option value="fixedBottom">Fixed Bottom</option>
+                    <option value="openAbleTopFxBtm">Openable Top 1</option>
+                    <option value="openAbleTop">Openable Top 2</option>
+                </select>
+            </li>
+            <li class="glassType">
+                <label>Select Glass Type:</label>
+                <select id="glassType">
+                    <option value="clear">clear</option>
+                    <option value="oneWay">oneWay</option>
+                    <option value="tinted">tinted</option>
+                    <option value="obscured">obscured</option>
+                </select>
+            </li>
+            <li class="glassThickness">
+                <label>Select Glass thickness:</label>
+                <select id="glassThickness">
+                    <option value="4mm">4mm</option>
+                    <option value="5mm">5mm</option>
+                    <option value="6mm">6mm</option>
+                    <option value="8mm">8mm</option>
+                    <option value="3+3mmLam">3+3mm Laminated</option>
+                    <option value="4+4mmLam">4+4mm Laminated</option>
+                    <option value="5+5mmLam">5+5mm Laminated</option>
+                    <option value="6mmTuff">6mm Toughened</option>
+                    <option value="8mmTuff">8mm Toughened</option>
+                </select>
+            </li>
+            <li>
+            <div class="calculateCost">
+                <button class="startButton" onclick="start()">Calculate Cost</button>
+                <input type="text" id="cost" readonly> <!-- Add `readonly` if the input is not editable -->
+            </div>                
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+        <div class="previewArea">
+            <img src="img/type-1.png" id="img-type" width="300px" height="300px">
+            
+        </div>
+    </div>
+    </div>
+</div>
+
+    </div>
+</section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <h2>About Us</h2>
+                <p>Learn more about our mission and values.</p>
+            </div>
+            <div class="feature">
+                <h2>Our Services</h2>
+                <p>Discover the range of services we offer.</p>
+            </div>
+            <div class="feature">
+                <h2>Our Projects</h2>
+                <p>Explore our completed projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p class="copyright">&copy; 2023 Capital Builders. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#"><img src="assets/icon_fb.svg" alt="Facebook"></a></li>
+                <li><a href="#"><img src="assets/icon_tw.svg" alt="Twitter"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+</div><!-- end #touchnav-wrapper -->
+
+</body>
+
+    <script src="js/config.js"></script>
+    <script src="js/index - Dev - Test.js"></script>
+    <!-- <script src="js/pinned-previews.js"></script> -->
+</html>
