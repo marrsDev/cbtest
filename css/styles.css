@@ -321,6 +321,12 @@ section {
     border-radius: 5px;
 }
 
+.right-section img {
+    max-width: 100%; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
 
 /* Pairing elements on larger screens */
 @media (min-width: 550px) {
@@ -341,8 +347,40 @@ section {
     }
 }
 
+/* Adjust layout for medium screens (552px - 850px) */
+@media (min-width: 552px) and (max-width: 850px) {
+    .content-box {
+        flex-direction: row; /* Ensure the sections are side by side */
+    }
+
+    .left-section {
+        flex: 60%; /* Left section takes 60% of the width */
+    }
+
+    .right-section {
+        flex: 40%; /* Right section takes 40% of the width */
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center the image horizontally */
+        justify-content: flex-start; /* Align content to the top */
+        padding-top: 20px; /* Add some top padding */
+    }
+
+    /* Ensure the image fits within the right section */
+    .right-section img {
+        max-width: 100%; /* Ensure the image does not exceed the width of its container */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 20px; /* Add some top margin to position the image towards the top */
+    }
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 551px) {
+
+    .hero-right-box {
+        display: none;
+    }
+
     .content-box {
         flex-direction: column; /* Stack sections vertically on smaller screens */
     }
@@ -355,6 +393,13 @@ section {
     .right-section {
     
         text-align: center; /* Center text on smaller screens */
+    }
+
+    /* Ensure the image fits within the right section */
+    .right-section img {
+        max-width: 70%; /* Ensure the image does not exceed the width of its container */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 20px; /* Add some top margin to position the image towards the top */
     }
 
 }
