@@ -18,3 +18,17 @@ window.addEventListener('scroll', function () {
         rightSection.classList.remove('pinned');
     }
 });
+
+
+
+function toggleMenu() {
+    const menu = document.querySelector('.main-navigation .menu');
+    menu.classList.toggle('open');
+}
+
+window.addEventListener('scroll', function () {
+    const menu = document.querySelector('.main-navigation .menu');
+    if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+    }
+});
