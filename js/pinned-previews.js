@@ -1,27 +1,20 @@
-// Add this script to your existing JavaScript file or in a <script> tag in the HTML
+window.addEventListener('scroll', function () {
+    const leftSection = document.querySelector('.left-section');
+    const rightSection = document.querySelector('.right-section');
+    const mobileBreakpoint = 551;
 
-document.addEventListener("DOMContentLoaded", function () {
-    const rightSection = document.querySelector(".right-section");
-    const heroContent = document.querySelector(".hero-content");
-    const leftSection = document.querySelector(".left-section");
+    // Only apply this logic for mobile devices
+    if (window.innerWidth <= mobileBreakpoint) {
+        const leftSectionEnd = leftSection.offsetTop + leftSection.offsetHeight;
+        const scrollPosition = window.scrollY + window.innerHeight;
 
-    // Function to check scroll position
-    function handleScroll() {
-        const heroContentHeight = heroContent.offsetHeight;
-        const scrollPosition = window.scrollY;
-
-        // Calculate 70% of the hero content height
-        const scrollThreshold = heroContentHeight * 0.4;
-
-        if (scrollPosition < scrollThreshold) {
-            // Pin the right section at the top
-            rightSection.classList.add("pinned");
+        if (scrollPosition >= leftSectionEnd) {
+            rightSection.classList.remove('pinned'); // Remove the pinned class
         } else {
-            // Revert to normal position
-            rightSection.classList.remove("pinned");
+            rightSection.classList.add('pinned'); // Add the pinned class
         }
+    } else {
+        // Reset styles for larger screens
+        rightSection.classList.remove('pinned');
     }
-
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
 });
