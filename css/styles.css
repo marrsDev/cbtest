@@ -450,18 +450,36 @@ section {
     }
 
     .main-navigation .menu {
-        display: none;
+        display: none; /* Hidden by default */
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 60px; /* Adjust this if needed to align with your header */
         right: 0;
         background: #1e2933;
         width: 100%;
+        max-height: 25vh; /* Set the maximum height to 25% of the viewport height */
+        overflow-y: auto; /* Add scroll if content exceeds the height */
         z-index: 1000;
+        padding: 10px 0; /* Add some padding for better spacing */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visibility */
     }
 
     .main-navigation .menu.open {
         display: flex;
+    }
+
+    .main-navigation .menu li {
+        margin: 2px 0 !important; /* Override the conflicting style */
+        padding: 0; /* Remove any default padding */
+        line-height: 1.2; /* Adjust line height to reduce vertical spacing */
+    }
+
+    .main-navigation .menu li a {
+        padding: 8px 20px; /* Adjust padding for better spacing */
+        font-size: 0.7rem; /* Reduce font size slightly */
+        color: #fff; /* Ensure text is visible */
+        text-decoration: none; /* Remove underline */
+        display: block; /* Make the entire area clickable */
     }
 
     .hamburger-menu {
@@ -471,9 +489,7 @@ section {
         padding: 10px;
     }
 
-    .main-navigation .menu li {
-        margin: 10px 0;
-    }
+
 
     .main-navigation .menu li a {
         color: #fff;
