@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -343,20 +343,18 @@ section {
     background-color: #fcfcfc;
 }*/
 .list-widgets {
-    width: 80%; /* 100% - (7% + 7%) */
-    margin-left: 10%; /* Explicit left margin */
-    margin-right: 10%; /* Explicit right margin */
+    width: 98%; /* 100% - (7% + 7%) */
+    margin-left: 1%; /* Explicit left margin */
+    margin-right: 1%; /* Explicit right margin */
     margin-top: 20px;
-    margin-bottom: 20px;
     padding: 20px 0;
 }
-
-
 
 /* Gallery and User Guide Widgets */
 
 .gallery-widget {
     border-top: 4px solid #75a8d3;
+    padding: 5%;
 }
 
 .gallery-widget-header-container {
@@ -377,17 +375,17 @@ section {
     font-family: Flux-Regular, SourceSansProRegular, Arial, sans-serif;
 }
 
-h1.widget-title {
-    color: #333; /* Dark gray color */
+.list-widgets h1.widget-title {
+    color: #444444; /* Dark gray color */
     font-size: 1.2rem; /* Font size */
-    font-weight: bold; /* Bold text */
     margin-bottom: 10px; /* Space below the heading */
+    font-family: Flux-Regular, SourceSansProRegular, Arial, sans-serif;
 }
 
 /* Styles for .userGuide-widget */
 .userGuide-widget {
     border-top: 4px solid #75a8d3;
-    padding-top: 20px;
+    padding: 5%;
 }
 
 .userGuide-widget .user-guide-items {
@@ -401,13 +399,12 @@ h1.widget-title {
     padding: 5px 0;
     display: flex;
     align-items: flex-start;
-    gap: 10px;
 }
 
 
-.userGuide-widget .user-guide-items li:first-child {
+/*.userGuide-widget .user-guide-items li:first-child {
     border-top: none;
-}
+}*/
 
 .userGuide-widget .steps {
     flex: 0 0 80px;
@@ -415,29 +412,93 @@ h1.widget-title {
     color: #444444;
 }
 
-.userGuide-widget .user-guide-items li h1 {
+.userGuide-widget .user-guide-items li h2 {
     flex: 1;
     margin: 0;
+    font-family: SourceSansProRegular, Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: normal;
     line-height: 1.4;
     color: #3776ab;
 }
 
-.userGuide-widget .user-guide-items li h1 a {
+.userGuide-widget .user-guide-items li h2 a {
     color: inherit;
     text-decoration: none;
 }
 
-.userGuide-widget .user-guide-items li h1 a:hover {
-    text-decoration: underline;
+.userGuide-widget .user-guide-items li h2 a:hover {
+    text-decoration: none;
+    color: #1e2933; /* Dark blue color */
+
 }
 
+/* Active state (when the link is being clicked) */
+.user-guide-items a:active {
+    color: white; /* Text color when active */
+    text-decoration: underline; /* Remove underline during active state */
+}
 
+.widgets-2 {
+    width: 94%; /* Adjusted to account for 2% margins on either side */
+    margin: 3% auto; /* Centrally located with automatic left and right margins */
+    margin-top: 0;
+    display: flex; /* Use flexbox for better alignment and spacing */
+    justify-content: space-between; /* Distribute space between widgets */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
+
+.small-widget {
+    width: 23%; /* Uniform width for each widget */
+    margin-right: 1%; /* Margin between widgets */
+    border-top: 4px solid #75a8d3;
+    padding: 2%;
+    border-bottom: 1px solid #caccce;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.small-widget.last {
+    margin-right: 0; /* Remove margin for the last widget */
+}
+
+.widgets-2 h1.widget-title {
+    font-family: 'Helvetica', 'Arial', sans-serif; /* Sans-serif font for h1 */
+    font-size: 1.2rem; /* Adjust size as needed */
+    margin: 0 0 10px 0; /* Adjust margin as needed */
+}
+
+.small-widget p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1.4;
+    color: #000000;
+    margin: 0 0 10px 0; /* Adjust margin as needed */
+}
+
+.small-widget ul {
+    padding-left: 0;
+}
+
+.small-widget li {
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    color: inherit;
+    text-decoration: none;
+    font-weight: normal;
+    line-height: 1;
+    color: #000000;
+    margin: 0 0 10px 0; /* Adjust margin as needed */
+}
 
 
 /* Pairing elements on larger screens */
 @media (min-width: 550px) {
+    .hamburger-menu {
+        display: none;
+    }
+    
     .properties-field ul {
         display: flex;
         flex-wrap: wrap; /* Allow wrapping */
@@ -623,6 +684,21 @@ h1.widget-title {
         text-decoration: none;
         padding: 10px 20px;
         display: block;
+    }
+
+    .widgets-2 {
+        flex-direction: column; /* Stack widgets vertically */
+    }
+
+    .small-widget {
+        width: 100%; /* Full width for each widget */
+        margin-right: 0; /* Remove margin between widgets */
+        margin-bottom: 20px; /* Add space between stacked widgets */
+        border-bottom: none;
+    }
+
+    .small-widget.last {
+        margin-bottom: 0; /* Remove bottom margin for the last widget */
     }
 
 }
